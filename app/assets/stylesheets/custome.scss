@@ -1,0 +1,39 @@
+@import 'bootstrap-sprockets';
+@import 'bootstrap';
+@import 'font-awesome';
+@import 'variable';
+
+body {
+  background-color: $body_boder;
+}
+
+.footer {
+  background-color: $footer_border;
+  padding: 5px 0;
+}
+
+.header-search {
+  form {
+    text-align: right;
+    padding-top: 30px;
+    input {
+      width: 250px;
+    }
+  }
+}
+
+ul {
+  &.navbar-nav {
+    width: 100%;
+    background-color: $footer_border;
+    &>li {
+      &>a {
+        padding: 10px 15px;
+      }
+    }
+  }
+}
+
+.header-page {
+  padding: 15px 0;
+}
