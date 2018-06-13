@@ -1,8 +1,8 @@
 class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
-    :recoverable, :rememberable, :trackable, :validatable
-  has_many :chat_rooms
-  has_many :messages
+    :recoverable, :rememberable, :trackable, :validatable, :confirmable
+  has_many :messages, dependent: :destroy
+  has_many :chat_rooms, through: :messages
 
   validates :name, presence: true, length: {minimum: Settings.users.name.min_length,
     maximum: Settings.users.name.max_length}
