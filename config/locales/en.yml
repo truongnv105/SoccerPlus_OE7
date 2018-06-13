@@ -4,3 +4,6 @@ en:
       home: "Home"
     footer:
       copy_right: "© Copyright 2018 by www.soccerplus_0e7.com"
+  users:
+    show:
+      user_not_exist: "User not exist in database"
