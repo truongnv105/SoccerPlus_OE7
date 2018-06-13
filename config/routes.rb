@@ -2,7 +2,10 @@ Rails.application.routes.draw do
   devise_for :admins, :skip => [:registrations], path_names: {
     sign_up: ""
   }
+
   mount RailsAdmin::Engine => "/admin", as: "rails_admin"
+  mount ActionCable.server => "/cable"
+
   root "static_pages#index"
   devise_for :users
   devise_scope :user do
@@ -12,4 +15,6 @@ Rails.application.routes.draw do
   end
   resources :users, only: :show
   resources :news, only: :index
+  resources :chat_rooms, param: :name
+  resources :messages
 end
