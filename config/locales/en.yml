@@ -1,4 +1,6 @@
 en:
+  value_placeholder: "press youe message in here..."
+  send: "Send"
   layouts:
     navigation:
       home: "Home"
