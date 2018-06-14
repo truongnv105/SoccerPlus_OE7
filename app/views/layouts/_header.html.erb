@@ -1,11 +1,15 @@
 <div class="container header-page">
   <div class="col-md-3">
-    <%= link_to image_tag("logo.png") %>
+    <%= link_to image_tag("logo.png"), root_path %>
   </div>
   <div class="col-md-9">
+    <div class="link_login text-right" >
+      <%= link_to "" %> /
+      <%= link_to "" %>
+    </div>
     <div class="header-search">
       <%= form_tag(root_path, method: :get) do %>
-        <%= text_field_tag :product_search, nil, placeholder: t("enter_keyword") %>
+        <%= text_field_tag :product_search, nil %>
         <%= button_tag type: "submit", class: "search-btn" do %>
           <i class="fa fa-search"></i>
         <% end %>

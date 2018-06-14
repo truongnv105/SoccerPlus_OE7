@@ -1,0 +1,22 @@
+<div class="container new_content">
+  <%= form_tag news_index_path, method: "get", class: "news_form" do %>
+    <%= hidden_field_tag :content_href %>
+    <%= submit_tag "", class: "submit_link" %>
+  <% end %>
+  <% if @search %>
+    <div class="page">
+      <div class="col-md-8 col-md-offset-2">
+        <%= raw @search %>
+      </div>
+    </div>
+  <% else %>
+    <div class="left_block">
+      <div class="col-md-8">
+        <%= raw @left %>
+      </div>
+      <div class="col-md-4">
+        <%= raw @right %>
+      </div>
+    </div>
+  <% end %>
+</div>
