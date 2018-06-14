@@ -7,3 +7,22 @@ en:
   users:
     show:
       user_not_exist: "User not exist in database"
+  admins:
+    mailer:
+      reset_password_instructions:
+        hello: "Hello "
+        message_to_user: "Someone has requested a link to change your password. You can do this through the link below."
+        notice_to_user: "If you didn't request this, please ignore this email."
+        notice_to_user_continue: "Your password won't change until you access the link above and create a new one."
+        change_pass: "Change my password"
+    passwords:
+      new:
+        forgot: "Forgot your password?"
+        reset_password: "Send me reset password instructions"
+        email: "Email"
+    sessions:
+      new:
+        login: "Log in"
+    shared:
+      links:
+        forgot: "Forgot your password?"

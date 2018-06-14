@@ -3,6 +3,10 @@
 @import 'font-awesome';
 @import 'variable';
 
+html {
+  background-color: $body_boder;
+}
+
 body {
   background-color: $body_boder;
 }

@@ -10,13 +10,15 @@
   <body>
     <%= render "layouts/header" %>
     <%= render "layouts/navigation" %>
-    <% if notice %>
-      <p class="notice"><%= notice %></p>
-    <% end %>
-    <% if alert %>
-      <p class="alert"><%= alert %></p>
-    <% end %>
-    <%= yield %>
+    <div class="container">
+      <% if notice %>
+        <p class="notice"><%= notice %></p>
+      <% end %>
+      <% if alert %>
+        <p class="alert"><%= alert %></p>
+      <% end %>
+      <%= yield %>
+    </div>
     <%= render "layouts/footer" %>
   </body>
 </html>
