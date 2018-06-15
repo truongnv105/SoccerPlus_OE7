@@ -1,0 +1,23 @@
+.root_links {
+  li {
+    &:nth-child(2) {
+      display: none;
+    }
+  }
+}
+
+.table-striped {
+  tr {
+    i {
+      font-size: 20px;
+    }
+  }
+}
+
+.show-all {
+  width: 230px;
+}
+
+.total-count {
+  margin: 15px 0;
+}
