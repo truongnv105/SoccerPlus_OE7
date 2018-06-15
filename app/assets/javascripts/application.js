@@ -16,4 +16,6 @@
 //= require activestorage
 //= require turbolinks
 //= require custom
-//= require_tree .
+//= require channels/chatrooms
+//= require channels/message
+//= require_tree
