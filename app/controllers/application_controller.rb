@@ -11,4 +11,8 @@ class ApplicationController < ActionController::Base
     devise_parameter_sanitizer.permit(:sign_up, keys: added_attrs)
     devise_parameter_sanitizer.permit(:account_update, keys: added_attrs)
   end
+
+  def after_sign_out_path_for(resource_or_scope)
+    URI.parse(request.referer).path if request.referer
+  end
 end

@@ -1,4 +1,8 @@
 Rails.application.routes.draw do
+  devise_for :admins, :skip => [:registrations], path_names: {
+    sign_up: ""
+  }
+  mount RailsAdmin::Engine => "/admin", as: "rails_admin"
   root "static_pages#index"
   devise_for :users
   devise_scope :user do
