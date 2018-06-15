@@ -31,12 +31,10 @@ ActiveRecord::Schema.define(version: 2018_06_13_094137) do
 
   create_table "chat_rooms", force: :cascade do |t|
     t.string "name"
-    t.integer "user_id"
     t.integer "match_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["match_id"], name: "index_chat_rooms_on_match_id"
-    t.index ["user_id"], name: "index_chat_rooms_on_user_id"
+    t.index ["match_id"], name: "index_chat_rooms_on_match_id", unique: true
   end
 
   create_table "leagues", force: :cascade do |t|
@@ -46,6 +44,7 @@ ActiveRecord::Schema.define(version: 2018_06_13_094137) do
   end
 
   create_table "matches", force: :cascade do |t|
+    t.string "name"
     t.integer "league_id"
     t.integer "team_id_1"
     t.integer "team_id_2"
@@ -70,23 +69,15 @@ ActiveRecord::Schema.define(version: 2018_06_13_094137) do
     t.index ["user_id"], name: "index_messages_on_user_id"
   end
 
-  create_table "news", force: :cascade do |t|
-    t.string "title"
-    t.text "content"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
   create_table "teams", force: :cascade do |t|
     t.string "name"
-    t.string "avatar"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
 
   create_table "time_goals", force: :cascade do |t|
     t.integer "match_id"
-    t.datetime "time_goal"
+    t.integer "time_goal"
     t.integer "team_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false

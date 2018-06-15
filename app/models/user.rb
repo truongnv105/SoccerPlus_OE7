@@ -9,4 +9,5 @@ class User < ApplicationRecord
   validates :address, presence: true, length: {minimum: Settings.users.address.min_length}
   validates :phone_number, presence: true, length: {minimum: Settings.users.phone_number.min_length,
     maximum: Settings.users.phone_number.max_length}
+  validates_presence_of :password_confirmation, if: :password
 end

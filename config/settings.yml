@@ -7,3 +7,8 @@ users:
   phone_number:
     min_length: 10
     max_length: 11
+vali:
+  name:
+    min_length: 6
+  infomation:
+    min_length: 20
