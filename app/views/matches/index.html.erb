@@ -1,0 +1,20 @@
+<table class="matches">
+  <tr>
+    <th><%= sort_link @q, :name, t(".name_of_match") %></th>
+    <th><%= sort_link @q, :start_time, t(".start") %></th>
+    <th><%= sort_link @q, :end_time, t(".end") %></th>
+    <th><%= sort_link @q, :point_team_1, t(".point_team_1") %></th>
+    <th><%= sort_link @q, :point_team_2, t(".point_team_2") %></th>
+    <th><%= t ".information" %></th>
+  </tr>
+  <% @matches.each do |match| %>
+    <tr>
+      <td><%= match.name %></td>
+      <td><%= l match.start_time, format: :short %></td>
+      <td><%= l match.end_time, format: :short %></td>
+      <td><%= match.point_team_1 %></td>
+      <td><%= match.point_team_2 %></td>
+      <td><%= link_to t(".information"), root_path %></td>
+    </tr>
+  <% end %>
+</table>

@@ -1,0 +1,15 @@
+<table class="teams">
+  <tr>
+    <th><%= t ".stt" %></th>
+    <th><%= sort_link @q, :name, t(".name") %></th>
+  </tr>
+  <% @teams.each.with_index 1 do |team, key| %>
+    <tr>
+      <td><%= key %></td>
+      <td><%= team.name %></td>
+    </tr>
+  <% end %>
+</table>
+<div id="pagination" class="text-center">
+  <%= paginate @teams, theme: "twitter-bootstrap-3" %>
+</div>

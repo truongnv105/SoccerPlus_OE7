@@ -12,3 +12,5 @@ vali:
     min_length: 6
   infomation:
     min_length: 20
+per:
+  limit_page: 10
