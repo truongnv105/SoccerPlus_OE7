@@ -3,7 +3,9 @@ en:
   send: "Send"
   layouts:
     navigation:
-      home: "Home"
+      news: "News"
+      data: "Data"
+      live_scope: "Live Scope"
     footer:
       copy_right: "© Copyright 2018 by www.soccerplus_0e7.com"
     header:
@@ -42,3 +44,19 @@ en:
     index:
       name: "Name"
       stt: "STT"
+    match:
+      info: "Information: "
+      started: "Start:"
+      yet_started: "Yet Started"
+    index:
+      time: "Time"
+      leagues: "Leagues"
+      match: "Match"
+      team: "Team"
+      info: "Info"
+      world_cup: "WORLD CUP 2018"
+  views:
+    pagination:
+      previous: "‹ PREV"
+      next: "NEXT ›"
+      truncate: "…"

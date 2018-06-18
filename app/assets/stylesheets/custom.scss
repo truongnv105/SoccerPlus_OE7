@@ -30,6 +30,7 @@ ul {
   &.navbar-nav {
     width: 100%;
     background-color: $footer_border;
+    margin-bottom: 20px;
     &>li {
       &>a {
         padding: 10px 15px;
@@ -42,7 +43,7 @@ ul {
   padding: 15px 0;
 }
 
-.news_content {
+.new_content {
   background-color: $white;
 }
 
@@ -52,16 +53,75 @@ ul {
   }
 }
 
-table {
-  width: 100%;
-  margin: 20px 10px;
-  color: white;
-  tr, th, td {
-    text-align: center;
-    padding: 5px 20px;
-    border: 1px solid $gray-light;
-    a {
-      color: $white;
+.nav {
+  li {
+    border-right: 1px solid $nav_border;
+    &:hover {
+      background-color: #97FFFF;
+    }
+  }
+}
+
+.bg-content {
+  background-color: $white;
+  min-height: 375px;
+}
+
+.table-match {
+  tr {
+    .title {
+      background-color: $blue;
+      text-align: left;
+      h4 {
+        margin: 0;
+        font-size: 14px;
+        color: $white;
+      }
+    }
+    td {
+      text-align: center;
+    }
+  }
+  thead {
+    tr {
+      th {
+        background-color: $ship_grey;
+        text-align: center;
+        color: $white;
+        &:not(:last-child) {
+          border-right: 1px solid $white;
+        }
+        a {
+          color: $white;
+        }
+      }
+    }
+  }
+}
+
+.modal {
+  .modal-content {
+    background-color: #c3bfc0;
+    .clor-yl {
+      color: $yellow;
+    }
+    p {
+      border-top: 1px solid $gothic;
+      padding-top: 10px;
+    }
+    .btn_close {
+      position: absolute;
+      top: 0;
+      right: 0;
+      border-radius: 0px;
+      border: none;
+      background-color: #c3bfc0;
+      i {
+        font-size: 25px;
+      }
+      &:hover {
+        background-color: $ship_grey;
+      }
     }
   }
 }
