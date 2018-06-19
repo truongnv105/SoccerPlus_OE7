@@ -6,6 +6,8 @@ en:
       home: "Home"
     footer:
       copy_right: "© Copyright 2018 by www.soccerplus_0e7.com"
+    header:
+      search: "Search"
   users:
     show:
       user_not_exist: "User not exist in database"
@@ -28,3 +30,15 @@ en:
     shared:
       links:
         forgot: "Forgot your password?"
+  matches:
+    index:
+      name_of_match: "Name of match"
+      start: "Start"
+      end: "End"
+      point_team_1: "Point Team 1"
+      point_team_2: "Point Team 2"
+      information: "Information"
+  teams:
+    index:
+      name: "Name"
+      stt: "STT"

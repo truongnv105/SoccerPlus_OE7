@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  get 'matches/index'
+  get 'teams/index'
   devise_for :admins, :skip => [:registrations], path_names: {
     sign_up: ""
   }
@@ -17,4 +19,6 @@ Rails.application.routes.draw do
   resources :news, only: :index
   resources :chat_rooms, param: :name
   resources :messages
+  resources :matches
+  resources :teams
 end
