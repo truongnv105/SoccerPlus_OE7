@@ -31,7 +31,6 @@ User.create!(
   password: "12345678",
   password_confirmation: "12345678",
   is_admin: true,
-  confirmed_at: DateTime.strptime("09/01/2009 17:00", "%m/%d/%Y %H:%M")
 )
 
 User.create!(
@@ -42,7 +41,6 @@ User.create!(
   password: "12345678",
   password_confirmation: "12345678",
   is_admin: true,
-  confirmed_at: DateTime.strptime("09/01/2009 17:00", "%m/%d/%Y %H:%M")
 )
 
 ChatRoom.create!(
