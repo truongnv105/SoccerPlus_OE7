@@ -3,5 +3,5 @@
     data: {textarea: "message"} %>
 
   <%= f.hidden_field :chat_room_id, value: chatroom.id %>
-  <%= f.submit t("send"), class: "btn btn-primary", data: {send: "message"} %>
+  <%= f.submit t("send"), id: "send_message", class: "btn btn-primary hidden", data: {send: "message"} %>
 <% end %>

@@ -15,3 +15,6 @@ vali:
 per:
   limit_page: 10
   limit_match: 30
+width_iframe: 653
+height_iframe: 430
+border_iframe: 1

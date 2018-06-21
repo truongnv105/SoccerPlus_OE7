@@ -1,0 +1,10 @@
+<div class="panel panel-default">
+  <div class="panel-body" id="messages-<%= @chatroom.id %>">
+    <%= render partial: "messages/message", collection: @chatroom.messages%>
+    <p class="card-text message-show hidden">
+      <span class="text-muted user-message mark"></span>:
+      <span class="content-message"></span>
+    </p>
+  </div>
+</div>
+<%= render partial: "messages/message_form", locals: {message: @message, chatroom: @chatroom} %>

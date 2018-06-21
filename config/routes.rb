@@ -20,6 +20,8 @@ Rails.application.routes.draw do
   resources :news, only: :index
   resources :chat_rooms, param: :name
   resources :messages
+  resources :matches, param: :name do
+    resources :chat_rooms
+  end
   resources :teams
-  resources :matches, only: %i(index show)
 end

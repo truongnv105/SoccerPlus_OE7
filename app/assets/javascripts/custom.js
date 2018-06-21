@@ -8,3 +8,9 @@ $(document).on('turbolinks:load', function(){
   });
   $('.new_content .listnews_title').removeAttr('onmouseout').removeAttr('onmouseover');
 });
+
+$(document).keypress(function(key){
+  if(key.which == 13){
+    $('#send_message').click();
+  }
+});
