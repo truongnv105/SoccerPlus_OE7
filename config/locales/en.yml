@@ -10,6 +10,11 @@ en:
       copy_right: "© Copyright 2018 by www.soccerplus_0e7.com"
     header:
       search: "Search"
+      logout: "Log Out"
+      login: "Login"
+      sign_up: "Sign Up"
+    devise:
+      soccerplusOe7: "SoccerPlus0e7"
   users:
     show:
       user_not_exist: "User not exist in database"

@@ -3,9 +3,13 @@
     <%= link_to image_tag("logo.png"), root_path %>
   </div>
   <div class="col-md-9">
-    <div class="link_login text-right">
-      <%= link_to "" %> /
-      <%= link_to "" %>
+    <div class="link_login text-right" >
+      <% if user_signed_in? %>
+        <%= link_to t(".logout"), destroy_user_session_path, method: :delete %>
+      <% else %>
+        <%= link_to t(".login"), new_user_session_path %> /
+        <%= link_to t(".sign_up"), new_user_registration_path %>
+      <% end %>
     </div>
     <div class="header-search">
       <%= search_form_for @q do |f| %>

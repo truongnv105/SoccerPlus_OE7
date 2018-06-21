@@ -14,7 +14,7 @@ vali:
     min_length: 20
 per:
   limit_page: 10
-  limit_match: 30
+  limit_match: 10
 width_iframe: 653
 height_iframe: 430
 border_iframe: 1

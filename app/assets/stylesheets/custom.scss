@@ -295,3 +295,34 @@ p.detail-match {
   background-color: $white;
   margin-top: 15px;
 }
+
+.footer_cover {
+  background-color: $white;
+  padding: 15px;
+  .row {
+    img {
+      max-width: 100%;
+    }
+    .width-33 {
+      display: block;
+      width: 33.33%;
+      float: left;
+      padding-right: 10px;
+    }
+    #footer_left {
+      padding-right: 0;
+    }
+  }
+  div {
+    &.footer {
+      margin: 15px 0 0;
+    }
+  }
+}
+
+.link_login {
+  color: $white;
+  a {
+    color: $white;
+  }
+}

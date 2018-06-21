@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title><%= t ".soccerplusOe7" %></title>
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+    <%= stylesheet_link_tag "application", media: "all", "data-turbolinks-track": "reload" %>
+    <%= javascript_include_tag "application", "data-turbolinks-track": "reload" %>
+  </head>
+  <body>
+    <%= render "layouts/header" %>
+    <%= render "layouts/navigation" %>
+    <div class="container">
+      <% flash.each do |message_type, message| %>
+        <p class="alert alert-<%= message_type %>"><%= message %></p>
+      <% end %>
+      <%= yield %>
+    </div>
+  </body>
+</html>
