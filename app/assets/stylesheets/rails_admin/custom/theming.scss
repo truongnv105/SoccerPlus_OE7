@@ -21,3 +21,9 @@
 .total-count {
   margin: 15px 0;
 }
+
+#new_match {
+  .point_team_1_field, .point_team_2_field {
+    display: none;
+  }
+}

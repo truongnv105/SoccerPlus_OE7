@@ -6,7 +6,12 @@ $(document).on('turbolinks:load', function(){
       $('.submit_link').click();
     }
   });
+
   $('.new_content .listnews_title').removeAttr('onmouseout').removeAttr('onmouseover');
+  
+  setTimeout(function(){
+    $('body').find('.alert').remove();
+  },3000);
 });
 
 $(document).keypress(function(key){

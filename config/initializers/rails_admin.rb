@@ -28,7 +28,8 @@ RailsAdmin.config do |config|
   end
 
   config.model Match do
-    include_fields :name, :league, :start_time, :end_time, :information
+    include_fields :name, :league, :start_time, :end_time, :information,
+                   :point_team_1, :point_team_2
     field :team_id_1, :enum do
       enum do
         Team.all.collect {|team| [team.name, team.id]}
@@ -38,6 +39,9 @@ RailsAdmin.config do |config|
       enum do
         Team.all.collect {|team| [team.name, team.id]}
       end
+    end
+    field :time_goals do
+      inverse_of :match
     end
   end
 
@@ -53,20 +57,20 @@ RailsAdmin.config do |config|
     dashboard
     index
     new do
-      except Message
+      except ["Message","TimeGoal"]
     end
     export do
-      except ["ChatRoom", "Message"]
+      except ["ChatRoom", "Message", "TimeGoal"]
     end
     bulk_delete do
-      except User
+      except ["User", "TimeGoal"]
     end
     show
     edit do
-      except ["User", "Message"]
+      except ["User", "Message", "TimeGoal"]
     end
     delete do
-      except User
+      except ["User", "TimeGoal"]
     end
   end
 end
