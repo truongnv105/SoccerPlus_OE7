@@ -40,6 +40,8 @@ en:
       point_team_1: "Point Team 1"
       point_team_2: "Point Team 2"
       information: "Information"
+    show:
+      match_not_exist: "Match not exist"
   teams:
     index:
       name: "Name"

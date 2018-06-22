@@ -1,0 +1,12 @@
+<div class="news-content">
+  <div class="row">
+    <div class="col-md-7">
+      <div></div>
+      <%= content_tag(:iframe, "", src: "https://www.youtube.com/embed/pJnRnhIEJgU",
+        width: Settings.width_iframe, height: Settings.height_iframe, frameborder: Settings.border_iframe) %>
+    </div>
+    <div class="col-md-5">
+      <%= render "chat_rooms/chat_room", locals: {message: @message, chatroom: @chatroom} if @chatroom.present? %>
+    </div>
+  </div>
+</div>

@@ -125,3 +125,23 @@ ul {
     }
   }
 }
+
+.panel-body {
+  height: 350px;
+  overflow: scroll;
+  p {
+    word-wrap: break-word;
+  }
+}
+
+.text-muted {
+  color: $light-blue;
+}
+
+.news-content {
+  margin-top: 30px;
+}
+
+.mark {
+  font-weight: bold;
+}

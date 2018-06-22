@@ -4,4 +4,16 @@ class MatchesController < ApplicationController
          ransack params[:q]
     @matches = @q.result
   end
+
+  def show
+    @match = Match.find_by name: params[:name]
+
+    if @match.nil?
+      flash[:danger] = t ".match_not_exist"
+      redirect_to root_url
+    else
+      @chatroom = @match.chat_room
+      @message = Message.new
+    end
+  end
 end
