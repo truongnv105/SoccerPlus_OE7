@@ -1,4 +1,6 @@
 class ApplicationController < ActionController::Base
+  layout :layout_by_resource
+
   before_action :authenticate_user!, except: %i(index show)
   protect_from_forgery with: :exception
 
@@ -20,5 +22,15 @@ class ApplicationController < ActionController::Base
 
   def after_sign_out_path_for(resource_or_scope)
     URI.parse(request.referer).path if request.referer
+  end
+
+  private
+
+  def layout_by_resource
+    if devise_controller?
+      "devise"
+    else
+      "application"
+    end
   end
 end
