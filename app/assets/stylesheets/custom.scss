@@ -252,7 +252,7 @@ p {
   margin-top: 30px;
 }
 
-.mark {
+.mark-title {
   font-weight: bold;
 }
 
@@ -263,3 +263,35 @@ p {
   }
 }
 
+.parent{
+  position: relative;
+}
+
+p.detail-match {
+  position: absolute;
+  left: 15px;
+  top: 0px;
+  padding: 6px 25px;
+  background-color: white;
+  border-radius: 5px;
+}
+
+.detail-informations {
+  padding: 5px;
+  margin-top: 5px;
+  border-bottom: 1px dashed $gray-light;
+  word-wrap: break-word;
+}
+
+.title-information {
+  padding: 15px;
+  text-align: center;
+  border-bottom: 1px solid $gray-light;
+  font-weight: bold;
+  font-size: 50px;
+}
+
+.show-information {
+  background-color: $white;
+  margin-top: 15px;
+}

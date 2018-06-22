@@ -1,12 +1,33 @@
 <div class="news-content">
   <div class="row">
-    <div class="col-md-7">
-      <div></div>
+    <div class="col-md-7 parent">
+      <p class="detail-match detail-<%= @chatroom.id %>">
+        <span>
+          <%= @match.team_1.name %>:
+          <span class="point-team-<%= @match.team_1.id %>">
+            <%= @match.point_team_1 %>
+          </span>
+        </span> |
+        <span>
+          <span class="point-team-<%= @match.team_2.id %>">
+            <%= @match.point_team_2 %>
+          </span>:<%= @match.team_2.name %>
+        </span>
+      </p>
       <%= content_tag(:iframe, "", src: "https://www.youtube.com/embed/pJnRnhIEJgU",
         width: Settings.width_iframe, height: Settings.height_iframe, frameborder: Settings.border_iframe) %>
     </div>
     <div class="col-md-5">
       <%= render "chat_rooms/chat_room", locals: {message: @message, chatroom: @chatroom} if @chatroom.present? %>
     </div>
+  </div>
+  <div class="show-information">
+    <p class="title-information"><%= t ".title" %><p>
+    <p class="detail-informations detail-hidden hidden"></p>
+    <% if @informations.present? %>
+      <% @informations.each do |infor| %>
+        <p class="detail-informations"><%= infor.detail %></p>
+      <% end %>
+    <% end %>
   </div>
 </div>

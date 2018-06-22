@@ -28,8 +28,8 @@ RailsAdmin.config do |config|
   end
 
   config.model Match do
-    include_fields :name, :league, :start_time, :end_time, :information,
-                   :point_team_1, :point_team_2
+    include_fields :name, :league, :start_time, :end_time,
+      :point_team_1, :point_team_2, :live
     field :team_id_1, :enum do
       enum do
         Team.all.collect {|team| [team.name, team.id]}
@@ -41,6 +41,9 @@ RailsAdmin.config do |config|
       end
     end
     field :time_goals do
+      inverse_of :match
+    end
+    field :informations do
       inverse_of :match
     end
   end

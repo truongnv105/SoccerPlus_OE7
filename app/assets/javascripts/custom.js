@@ -8,14 +8,16 @@ $(document).on('turbolinks:load', function(){
   });
 
   $('.new_content .listnews_title').removeAttr('onmouseout').removeAttr('onmouseover');
-  
+
   setTimeout(function(){
     $('body').find('.alert').remove();
   },3000);
 });
 
-$(document).keypress(function(key){
-  if(key.which == 13){
-    $('#send_message').click();
-  }
+$(document).ready(function(){
+  $('#message_message').on('keypress', function(key){
+    if(key.which == 13){
+      $('#send_message').click();
+    }
+  });
 });
