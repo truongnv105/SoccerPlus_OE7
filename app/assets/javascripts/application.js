@@ -18,4 +18,5 @@
 //= require custom
 //= require channels/chatrooms
 //= require channels/message
+//= require channels/time_goal
 //= require_tree

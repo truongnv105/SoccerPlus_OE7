@@ -10,7 +10,6 @@ class CreateMatches < ActiveRecord::Migration[5.2]
       t.integer :point_team_1, default: 0
       t.integer :point_team_2, default: 0
       t.integer :live
-      t.text :information
 
       t.timestamps
     end

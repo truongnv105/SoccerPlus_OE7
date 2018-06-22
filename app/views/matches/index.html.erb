@@ -22,7 +22,7 @@
             <td><%= match.name %></td>
             <td><%= match.league.name %></td>
             <td>
-              <p class="mark">
+              <p class="mark-title">
                 <%= match.team_1.name %> - <%= match.team_2.name %>
               </p>
             </td>
@@ -34,17 +34,13 @@
                   <div class="modal-content">
                     <div class="modal-body">
                       <h5 class="text-left">
-                        <span class="mark"><%= t ".started" %></span>
+                        <span class="mark-title"><%= t ".started" %></span>
                         <%= match.start_time.strftime("%d/%m/%Y %H:%M") %>
                       </h5>
-                      <p class="mark">
+                      <p class="mark-title">
                         <%= match.team_1.name %> - <%= match.team_2.name %>
                       </p>
                       <p class="clor-yl"><%= t ".yet_started" %></p>
-                      <p class="text-left">
-                        <span class="mark"><%= t ".info" %></span>
-                        <br/><%= match.information %>
-                      </p>
                     </div>
                     <button type="button" class="btn btn-default btn_close" data-dismiss="modal">
                       <i class="fa fa-remove"></i>
