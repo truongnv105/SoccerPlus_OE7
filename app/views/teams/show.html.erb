@@ -1,0 +1,15 @@
+<p><%= t ".matches" %><%= @team.name %></p>
+<table class="detail-match">
+  <tr>
+    <th><%= t ".stt" %></th>
+    <th><%= t ".league" %></th>
+    <th><%= t ".match" %></th>
+    <th><%= t ".result" %>t</th>
+  </tr>
+  <% @matches.each.with_index 1 do |match, index| %>
+    <td><%= index %></td>
+    <td><%= match.league.name %></td>
+    <td><%= match.name %></td>
+    <td><%= match.point_team_1%>:<%= match.point_team_2%></td>
+  <% end %>
+</table>

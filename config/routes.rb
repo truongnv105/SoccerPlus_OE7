@@ -23,7 +23,7 @@ Rails.application.routes.draw do
   resources :matches, param: :name do
     resources :chat_rooms
   end
-  resources :teams
+  resources :teams, param: :name
   resources :matches, only: :index
   resources :live_score, only: :index
 end

@@ -1,6 +1,6 @@
 <%=form_for message, remote: true, authenticity_token: true do |f| %>
   <%= f.text_area :message, class: "form-control", placeholder: t("value_placeholder"),
-    data: {textarea: "message"} %>
+    data: {textarea: "message"}, required: true %>
 
   <%= f.hidden_field :chat_room_id, value: chatroom.id %>
   <%= f.submit t("send"), id: "send_message", class: "btn btn-primary hidden", data: {send: "message"} %>

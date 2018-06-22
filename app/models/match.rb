@@ -16,8 +16,7 @@ class Match < ApplicationRecord
   validates :team_id_2, presence: true
 
   scope :start_match, ->{where("start_time > ?", Time.now)}
-
   scope :end_match, ->{where("end_time < ?", Time.now)}
-
   scope :live, ->(num){where("live = ?", num)}
+  scope :select_team, ->(team){where(team_id_1: team).or(where(team_id_2: team))}
 end

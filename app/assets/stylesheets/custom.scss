@@ -326,3 +326,13 @@ p.detail-match {
     color: $white;
   }
 }
+
+table.teams {
+  width: 100%;
+  tr, th, td {
+    text-align: center;
+    background-color: $white;
+    border: 1px solid $gray-light;
+    padding: 10px;
+  }
+}

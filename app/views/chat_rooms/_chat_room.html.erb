@@ -7,4 +7,6 @@
     </p>
   </div>
 </div>
-<%= render partial: "messages/message_form", locals: {message: @message, chatroom: @chatroom} %>
+<% if user_signed_in? %>
+  <%= render partial: "messages/message_form", locals: {message: @message, chatroom: @chatroom} %>
+<% end %>

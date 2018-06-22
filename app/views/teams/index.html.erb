@@ -6,7 +6,7 @@
   <% @teams.each.with_index 1 do |team, key| %>
     <tr>
       <td><%= key %></td>
-      <td><%= team.name %></td>
+      <td><%= link_to team.name, team_path(team.name), class: "mark-title" %></td>
     </tr>
   <% end %>
 </table>
