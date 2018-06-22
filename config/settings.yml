@@ -14,3 +14,4 @@ vali:
     min_length: 20
 per:
   limit_page: 10
+  limit_match: 30

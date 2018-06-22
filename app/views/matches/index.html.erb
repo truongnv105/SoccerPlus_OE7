@@ -1,20 +1,64 @@
-<table class="matches">
-  <tr>
-    <th><%= sort_link @q, :name, t(".name_of_match") %></th>
-    <th><%= sort_link @q, :start_time, t(".start") %></th>
-    <th><%= sort_link @q, :end_time, t(".end") %></th>
-    <th><%= sort_link @q, :point_team_1, t(".point_team_1") %></th>
-    <th><%= sort_link @q, :point_team_2, t(".point_team_2") %></th>
-    <th><%= t ".information" %></th>
-  </tr>
-  <% @matches.each do |match| %>
-    <tr>
-      <td><%= match.name %></td>
-      <td><%= l match.start_time, format: :short %></td>
-      <td><%= l match.end_time, format: :short %></td>
-      <td><%= match.point_team_1 %></td>
-      <td><%= match.point_team_2 %></td>
-      <td><%= link_to t(".information"), root_path %></td>
-    </tr>
-  <% end %>
-</table>
+<% if @matches.any? %>
+  <div class="bg-content">
+    <table class="table table-striped table-match">
+      <thead>
+        <tr>
+          <th><%= sort_link @q, :start_time, t(".time") %></th>
+          <th><%= t ".match" %></th>
+          <th><%= sort_link @q, :league_id, t(".leagues") %></th>
+          <th><%= t ".team" %></th>
+          <th><%= t ".info" %></th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td colspan="5" class="title">
+            <h4><%= t ".world_cup" %></h4>
+          </td>
+        </tr>
+        <% @matches.each do |match| %>
+          <tr>
+            <td><%= match.start_time.strftime("%d/%m %H:%M") %></td>
+            <td><%= match.name %></td>
+            <td><%= match.league.name %></td>
+            <td>
+              <p class="mark">
+                <%= match.team_1.name %> - <%= match.team_2.name %>
+              </p>
+            </td>
+            <td>
+              <%= link_to t(".info"), "#", data: {toggle: "modal",
+                backdrop: "static", target: "#information-#{match.id}"} %>
+              <div id="information-<%= match.id %>" class="modal fade" role="dialog">
+                <div class="modal-dialog">
+                  <div class="modal-content">
+                    <div class="modal-body">
+                      <h5 class="text-left">
+                        <span class="mark"><%= t ".started" %></span>
+                        <%= match.start_time.strftime("%d/%m/%Y %H:%M") %>
+                      </h5>
+                      <p class="mark">
+                        <%= match.team_1.name %> - <%= match.team_2.name %>
+                      </p>
+                      <p class="clor-yl"><%= t ".yet_started" %></p>
+                      <p class="text-left">
+                        <span class="mark"><%= t ".info" %></span>
+                        <br/><%= match.information %>
+                      </p>
+                    </div>
+                    <button type="button" class="btn btn-default btn_close" data-dismiss="modal">
+                      <i class="fa fa-remove"></i>
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </td>
+          </tr>
+        <% end %>
+      </tbody>
+    </table>
+    <div class="pagination_cover text-center">
+      <%= paginate @matches, theme: "twitter-bootstrap-3" %>
+    </div>
+  </div>
+<% end %>

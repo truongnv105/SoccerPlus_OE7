@@ -1,8 +1,8 @@
-$(document).ready(function(){
+$(document).on('turbolinks:load', function(){
   $('.new_content a').on('click',function(e){
     if(!$(this).attr('href').includes('.com') || !$(this).attr('href').includes('www')) {
       e.preventDefault();
-      $('input#content_href').val($(this).attr("href"));
+      $('input#content_href').val($(this).attr('href'));
       $('.submit_link').click();
     }
   });
