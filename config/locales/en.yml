@@ -42,6 +42,7 @@ en:
       information: "Information"
     show:
       match_not_exist: "Match not exist"
+      title: "Information of match"
   live_score:
     index:
       name_of_match: "Name of match"

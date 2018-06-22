@@ -1,7 +1,6 @@
 class MatchesController < ApplicationController
   def index
-    @q = Match.start_match.page(params[:page]).per(Settings.per.limit_match).
-         ransack params[:q]
+    @q = Match.start_match.page(params[:page]).per(Settings.per.limit_match).ransack params[:q]
     @matches = @q.result
   end
 
@@ -14,6 +13,7 @@ class MatchesController < ApplicationController
     else
       @chatroom = @match.chat_room
       @message = Message.new
+      @informations = @match.informations
     end
   end
 end

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_06_19_135649) do
+ActiveRecord::Schema.define(version: 2018_06_21_152815) do
 
   create_table "admins", force: :cascade do |t|
     t.string "email", default: "", null: false
@@ -37,6 +37,14 @@ ActiveRecord::Schema.define(version: 2018_06_19_135649) do
     t.index ["match_id"], name: "index_chat_rooms_on_match_id", unique: true
   end
 
+  create_table "information", force: :cascade do |t|
+    t.integer "match_id"
+    t.text "detail"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["match_id"], name: "index_information_on_match_id"
+  end
+
   create_table "leagues", force: :cascade do |t|
     t.string "name"
     t.datetime "created_at", null: false
@@ -50,10 +58,9 @@ ActiveRecord::Schema.define(version: 2018_06_19_135649) do
     t.integer "team_id_2"
     t.datetime "start_time"
     t.datetime "end_time"
-    t.integer "point_team_1"
-    t.integer "point_team_2"
+    t.integer "point_team_1", default: 0
+    t.integer "point_team_2", default: 0
     t.integer "live"
-    t.text "information"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["league_id"], name: "index_matches_on_league_id"
