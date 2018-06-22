@@ -42,6 +42,18 @@ en:
       information: "Information"
     show:
       match_not_exist: "Match not exist"
+  live_score:
+    index:
+      name_of_match: "Name of match"
+      start: "Start: "
+      end: "End: "
+      point_team_1: "Point Team 1"
+      point_team_2: "Point Team 2"
+      information: "Information"
+      finish: "Finished! "
+      match_detail: "Detail Match"
+      happend: "Happenning"
+      live: "Live"
   teams:
     index:
       name: "Name"

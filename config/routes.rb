@@ -24,4 +24,6 @@ Rails.application.routes.draw do
     resources :chat_rooms
   end
   resources :teams
+  resources :matches, only: :index
+  resources :live_score, only: :index
 end
